@@ -9,13 +9,13 @@ TODO
 - [About](#about)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Running the Measurment](#running-the-excercises)
+- [Running the Measurment](#running-the-measurement)
 - [Running single Nodes](#running-single-nodes)
 </details>
 
 -------------------------------------------------------------------------------------
 ## Requirements
-
+arm64 (Jetson) Device with l4t (tested on 35.3.1)
 
 -------------------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ inside the docker run
 ros2 launch ceol_bringup measurement.launch.py
 ```
 
-### Running with pointcloud pipelin
+### Running with pointcloud pipeline
 inside the docker run
 ```sh
 ros2 launch TODO TODO
@@ -70,5 +70,14 @@ ros2 launch TODO TODO
 ### launch the data playback of existing rosbags
 inside the docker run
 ```sh
-roslaunch TODO TODO
+ros2 launch TODO TODO
 ```
+
+## RUNNING TSINGLE NODES 
+inside the docker run
+
+CEOL node (CAN-communication)
+```sh
+ros2 launch ros2_socketcan socket_can_receiver.launch.py && ros2 run ceol_base ceol_node
+```
+
